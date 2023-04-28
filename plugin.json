@@ -1,0 +1,48 @@
+{
+  "main": "index.html",
+  "preload": "preload.js",
+  "logo": "logo.png",
+  "pluginSetting": {
+    "single": false
+  },
+  "features": [
+    {
+      "code": "ocr",
+      "explain": "快速提取图片中文字",
+      "cmds": [
+        "OCR 文字识别",
+        {
+          "type": "img",
+          "label": "OCR 文字识别"
+        }
+      ]
+    },
+    {
+      "code": "screenshot-ocr",
+      "explain": "截图 OCR 文字识别",
+      "cmds": [
+        "截图文字识别"
+      ]
+    },
+    {
+      "code": "ocr-copy",
+      "explain": "截图 OCR 文字识别，复制识别内容",
+      "cmds": [
+        "OCR 识别复制"
+      ]
+    },
+    {
+      "code": "ocr-translate",
+      "explain": "截图 OCR 文字识别，翻译识别内容",
+      "cmds": [
+        "OCR 识别翻译"
+      ]
+    }
+  ],
+  "name": "ocr1",
+  "pluginName": "OCR 文字识别1",
+  "description": "快速提取图片中文字1",
+  "author": "None",
+  "homepage": "",
+  "version": "0.0.1"
+}
