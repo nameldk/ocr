@@ -15421,13 +15421,14 @@
                 const body = new URLSearchParams();
                 body.append('image', e)
                 body.append('image_url', '')
-                // body.append('type', 'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic')
-                body.append('type', 'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic')
+                body.append('type', 'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic')
+                // body.append('type', 'https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic')
+                body.append('type', 'https://ai.baidu.com/platform/demo/red/rest/2.0/ocr/v1/accurate_basic')
                 body.append('detect_direction', 'false')
                 body.append('language_type', 'CHN_ENG')
                 const options = {
                     hostname: 'ai.baidu.com',
-                    path: '/aidemo',
+                    path: '/platform/demo/red/rest/2.0/ocr/v1/accurate_basic',
                     method: 'POST',
                     headers: {
                         'Host': 'ai.baidu.com',
@@ -15456,9 +15457,9 @@
 
             const a = JSON.parse(o)
             // throw new Error('2:'+o)
-            if (a.errno !== 0) throw new Error(`2errno:${a.errno},msg:${a.msg}`);
-            if (!a.data?.words_result || 0 === a.data.words_result.length) throw new Error("OCR 未识别到文字");
-            return a.data.words_result.map((e => e.words)).join("\n").trim()
+            if (a.errorCode !== 0) throw new Error(`2errorCode:${a.errorCode},errorMsg:${a.errorMsg}`);
+            if (!a.result?.words_result || 0 === a.result.words_result.length) throw new Error("OCR 未识别到文字");
+            return a.result.words_result.map((e => e.words)).join("\n").trim()
         }
 
         function lu(e, t, n) {
